@@ -48,7 +48,8 @@ RUN apk add -U --no-cache \
       su-exec \
 && ln -s /usr/lib/libgdal.so.20 /usr/lib/libgdal.so \
 && ln -s /usr/lib/libgeos_c.so.1 /usr/lib/libgeos_c.so \
-&& apk add -U --no-cache \
+
+RUN apk add -U --no-cache \
       --repository http://dl-5.alpinelinux.org/alpine/edge/main/ \
       --repository http://dl-5.alpinelinux.org/alpine/edge/testing/ \
       --repository http://dl-5.alpinelinux.org/alpine/edge/community/ \      
@@ -67,7 +68,7 @@ RUN apk add -U --no-cache \
       tiff-dev \
 && pip install --upgrade pip \
 && pip install -r $CYPHON_HOME/requirements.txt \
-&& apk del build-deps \
+RUN apk del build-deps \
 #&& python3 -m nltk.downloader -d /usr/local/share/nltk_data punkt wordnet 
 
 # create unprivileged user
