@@ -69,7 +69,7 @@ RUN apk add -U --no-cache \
 && pip install --upgrade pip \
 && pip install -r $CYPHON_HOME/requirements.txt 
 
-RUN apk del build-deps 
+RUN apk del build-deps \
 && python3 -m nltk.downloader -d /usr/local/share/nltk_data punkt wordnet 
 
 # create unprivileged user
