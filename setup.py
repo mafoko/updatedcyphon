@@ -1,5 +1,4 @@
 # Copyright 2017-2019 ControlScan, Inc.
-#
 # This file is part of Cyphon Engine.
 #
 # Cyphon Engine is free software: you can redistribute it and/or modify
@@ -24,7 +23,7 @@ except ImportError:
     from pip._internal.download import PipSession
     from pip._internal.req import parse_requirements
 from setuptools import find_packages, setup
-
+#
 # parse_requirements() returns generator of pip.req.InstallRequirement objects
 INSTALL_REQS = parse_requirements(
     'requirements.txt',
